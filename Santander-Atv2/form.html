@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Monte seu Sanduíche</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <h1>Monte seu Sanduíche</h1>
+        </header>
+        
+
+        <main>
+            <form>
+                <section class="form-group" id="grey">
+                    <label for="nome" class="form-label">Nome do Seu Sanduíche</label>
+                    <input id="nome" name="nome" type="text" class="form-control">
+                </section>
+                <section class="form-group" id="grey">
+                    <label for="pao" class="form-label">Pão</label>
+                    <select id="pao" name="pao" class="form-select">
+                        <option selected  disabled>Escolha seu pão</option>
+                        <option value="p-integral">Integral</option>
+                        <option value="p-batata">Pão de Batata</option>
+                        <option value="p-queijo">Pão Quatro Queijos
+                        </option>
+                        <option value="p-tapioca">Tapioca</option>
+                    </select>
+                </section>
+                <section class="form-group">
+                    <h4>Molhos</h4>
+                    <div class="size">
+                        <div class="form-group" id="barbecue">
+                            <input id="barbecue" name="molho" type="checkbox" class="form-check-input">
+                            <label for="barbecue" class="form-label">Barbecue</label>
+                        </div>
+                        <div class="form-group" id="mostarda">
+                            <input id="mostarda-mel" name="molho" type="checkbox" class="form-check-input">
+                            <label for="mostarda-mel" class="form-label">Mostrada e Mel</label>
+                        </div>
+                        <div class="form-group" id="picante">
+                            <input id="picante" name="molho" type="checkbox" class="form-check-input">
+                            <label for="picante" class="form-label">Picante</label>
+                        </div>
+                        <div class="form-group" id="maionese">
+                            <input id="maionese-verde" name="molho" type="checkbox" class="form-check-input">
+                            <label for="maionese-verde" class="form-label">Maionese Verde</label>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-group">
+                    <h4>Salada</h4>
+                    <div class="size">
+                        <div class="form-group" id="alface">
+                            <label for="alface" class="form-label">Alface</label>
+                            <input id="alface" name="salada" type="checkbox" class="form-check-input">
+                        </div>
+                        <div class="form-group" id="tomate">
+                            <label for="tomate" class="form-label">Tomate</label>
+                            <input id="tomate" name="salada" type="checkbox" class="form-check-input">
+                        </div>
+                        <div class="form-group" id="pepino">
+                            <label for="pepino" class="form-label">Pepino</label>
+                            <input id="pepino" name="salada" type="checkbox" class="form-check-input">
+                        </div>
+                        <div class="form-group" id="cebola">
+                            <label for="cebola" class="form-label">Cebola</label>
+                            <input id="cebola" name="salada" type="checkbox" class="form-check-input">
+                        </div>
+                    </div>
+                </section>
+                <section class="form-group" id="grey">
+                    <h4>Queijo</h4>
+                    <select id="queijo" name="queijo" class="form-select">
+                        <option selected  disabled>Escolha seu queijo</option>
+                        <option value="prato">Prato</option>
+                        <option value="cheddar">Cheddar</option>
+                        <option value="requeijao">Requeijão</option>
+                    </select>
+                </section>
+                <section class="form-group" id="grey">  
+                    <h4>Quero batata por um adicional de R$6,00 ?</h4>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="sim">Sim</label>
+                        <input class="form-check-control" type="radio" name="batata" id="sim">
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="nao">Não</label>
+                        <input class="form-check-control" type="radio" name="batata" id="nao">
+                    </div>
+                </section>
+                <section class="form-group"  id="grey">
+                    <label for="observacao">Observações</label>
+                    <textarea id="observacao" class="form-control" rows="4"></textarea>
+                </section>
+                <section>
+                    <button type="submit" class="btn btn-primary btn"><h4>Sanduíche Pronto</h4></button>
+                </section>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

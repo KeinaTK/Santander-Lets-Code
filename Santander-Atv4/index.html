@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+
+    function merge(arr, start, middle, end) {
+        let n1 = middle - start + 1;
+        let n2 = end - middle;
+
+        let L = new Array(n1);
+        let R = new Array(n2);
+
+        for (let i = 0; i < n1; i++)
+            L[i] = arr[start + i];
+
+        for (let j = 0; j < n2; j++)
+            R[j] = arr[middle + 1 + j];
+
+        let i = 0;
+        let j = 0;
+        let k = start;
+
+        while (i < n1 && j < n2) {
+
+            if (L[i].produto <= R[j].produto) {
+
+                arr[k] = L[i];
+                i++;
+
+            }
+
+            else {
+
+                arr[k] = R[j];
+                j++;
+
+            }
+
+            k++;
+        }
+
+        while (i < n1) {
+
+            arr[k] = L[i];
+            i++;
+            k++;
+
+        }
+
+        while (j < n2) {
+
+            arr[k] = R[j];
+            j++;
+            k++;
+
+        }
+    }
+
+    function mergeSort(arr,start, end){
+        if (start >= end) return;
+
+        let middle = start + Math.floor((end-start)/2);
+
+        mergeSort(arr, start, middle);
+        mergeSort(arr, middle + 1, end);
+
+        merge(arr, start, middle, end);
+
+    }
+
+    main();
+
+    async function main() {
+        Array.prototype.printBonitinho = function() { console.table(this); }
+
+        const response = await fetch('vendas.json');
+        let vendas = await response.json();
+
+        while (true) {
+            opcao = prompt("Histórico de Vendas\nDigite a opcao desejada:\n1 - Vizualizar Vendas\n2 - Remover\n3 - Adicionar\n4 - Buscar Venda\n5 - Ordenar por nome\n6 - Faturamento\n0 - Sair");
+            if (opcao == 0) break;
+
+            switch(parseInt(opcao)){
+                case 1:
+                    vendas.printBonitinho();
+                    break;
+
+                case 2:
+                    const vendaRemove = prompt("Digite o numero da venda a ser removida:\n");
+                    vendas = vendas.filter((_, ind) => ind != vendaRemove);
+                    console.log("Venda removida com sucesso!");
+                    vendas.printBonitinho();
+                    break;
+
+                case 3:
+                    const vendaAdiciona = prompt("Informe a venda a ser adicionado(produto,preco,quantidade):\n");
+                    vendaAdicionaSplit = vendaAdiciona.split(",");
+
+                    let novo = {
+                        "produto": vendaAdicionaSplit[0],
+                        "preco": parseInt(vendaAdicionaSplit[1]),
+                        "quantidade": parseInt(vendaAdicionaSplit[2])
+                    };
+
+                    vendas.push(novo);
+
+                    console.log("Venda adicionada com sucesso");
+                    vendas.printBonitinho();
+                    break;
+
+                case 4:
+                    const produto = prompt("Informe o nome do produto:").toLowerCase();
+                    let arrayNomes = vendas.map((val) => val.produto.toLowerCase());
+
+                    arrayNomes.forEach((val, i) => {
+                        if (val == produto)
+                            console.log("Produto ", vendas[i]);
+                    });
+
+                    break;
+
+                case 5:
+                    let arr = [...vendas];
+                    mergeSort(arr, 0, arr.length - 1);
+                    arr.printBonitinho();
+                    break;
+                
+                case 6:
+                    vendas.forEach(venda => console.log(`${venda.quantidade} x ${venda.produto} (${venda.preco}) = ${venda.quantidade * venda.preco} `));
+                    let total = vendas.reduce((som, venda) => som += venda.quantidade * venda.preco, 0);
+                    console.log(`Total: ${total}`);
+                    break;
+
+                default:
+                    alert("Numero invalido");
+                    break;
+            }
+        }
+    }
+</script>
+</html>

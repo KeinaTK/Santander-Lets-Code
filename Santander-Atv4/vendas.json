@@ -1,0 +1,22 @@
+[
+    {"produto": "Hamburguer", "preco":10.00, "quantidade":1},
+    {"produto": "Macarrao", "preco":10.00, "quantidade":2},
+    {"produto": "Arroz e Feijao", "preco":10.00, "quantidade":5},
+    {"produto": "Sushi", "preco":10.00, "quantidade":9},
+    {"produto": "Pipoca", "preco":10.00, "quantidade":8},
+    {"produto": "Pipoca Doce", "preco":10.00, "quantidade":56},
+    {"produto": "Milho", "preco":10.00, "quantidade":34},
+    {"produto": "Chocolate", "preco":10.00, "quantidade":3},
+    {"produto": "Chocolate Branco", "preco":10.00, "quantidade":5},
+    {"produto": "Sorvete", "preco":10.00, "quantidade":5},
+    {"produto": "Kebab", "preco":10.00, "quantidade":2},
+    {"produto": "Esfirra", "preco":10.00, "quantidade":4},
+    {"produto": "Pao de Queijo", "preco":10.00, "quantidade":3},
+    {"produto": "Panqueca", "preco":10.00, "quantidade":44},
+    {"produto": "Sorvete de Chocolate", "preco":10.00, "quantidade":32},
+    {"produto": "Pudim", "preco":10.00, "quantidade":99},
+    {"produto": "Bolo", "preco":10.00, "quantidade":4},
+    {"produto": "Cupcake", "preco":10.00, "quantidade":6},
+    {"produto": "Popcake", "preco":10.00, "quantidade":6},
+    {"produto": "Sorvete", "preco":10.00, "quantidade":3}
+]
