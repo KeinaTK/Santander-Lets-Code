@@ -1,0 +1,20 @@
+* {
+    font-family: 'Kalam', cursive; 
+    font-size: large;
+    color: #102963;
+}
+
+.center {
+    margin: 40px 200px;
+}
+
+button{
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    transition: all linear 0.5s;
+}
+
+.bg {
+    background: rgba(47, 98, 236, 0.4);
+    color: cadetblue;
+}

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+* {
+    font-family: Raleway 'Kalam', cursive !important; 
+    /* Add !important to overwrite all elements */
+  }
+body { 
+    margin: 0; 
+    font-family: 'Kalam', cursive;
+    background-image: url(https://cdn.wallpapersafari.com/92/63/sxBKWg.jpg);
+    background-repeat: no-repeat;
+}

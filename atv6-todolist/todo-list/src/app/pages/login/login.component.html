@@ -1,0 +1,24 @@
+<div class="layout">
+    <div class="border">
+        <h1 appColor>To Do List</h1>
+        <form *ngIf="login" [formGroup]="login">
+            <mat-form-field appearance="fill">
+                <mat-label>User</mat-label>
+                <input formControlName="user" matInput>
+            </mat-form-field>
+
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                </mat-form-field>
+            </div>
+
+        <button mat-raised-button color="primary" (click)="onSubmit()" >Loggin</button>
+
+        </form>
+    </div>
+</div>

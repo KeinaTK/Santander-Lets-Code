@@ -1,0 +1,15 @@
+.background {
+    background-color: rgb(123, 123, 224);
+}
+
+.space {
+    flex: 1 1 auto;
+}
+
+button {
+    margin: 0 10px;
+}
+
+.selected {
+    background: rgb(45, 153, 216);
+}

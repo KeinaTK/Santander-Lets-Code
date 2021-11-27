@@ -1,0 +1,34 @@
+.example-form-field {
+    width: 300px;
+  }
+  
+  .layout {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+  
+  .background {
+    background: rgb(172, 172, 247);
+    color: rgb(240, 240, 240);
+    padding: 10px 100px;
+  }
+  
+  p {
+    font-size: 40px;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,0 +1,29 @@
+<div class="layout">
+  <p>Update Your Task</p>
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Task Number</mat-label>
+      <input matInput type="text" [(ngModel)]="id">
+      <button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Task Name</mat-label>
+      <input matInput type="text" [(ngModel)]="task[id].name">
+      <button *ngIf="task[id].name" matSuffix mat-icon-button aria-label="Clear" (click)="task[id].name=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Task Description</mat-label>
+      <input matInput type="text" [(ngModel)]="task[id].description">
+      <button *ngIf="task[id].description" matSuffix mat-icon-button aria-label="Clear" (click)="task[id].description=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-checkbox [checked]="task[id].done" [(ngModel)]="task[id].done">Done</mat-checkbox>
+
+</div>

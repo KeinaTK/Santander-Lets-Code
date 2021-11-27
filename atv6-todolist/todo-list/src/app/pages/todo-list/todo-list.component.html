@@ -1,0 +1,22 @@
+<div class="center">
+  <mat-expansion-panel *ngFor="let task of taskList; index as i" class="bg">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{i}}-
+        {{ task.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ task.description }}
+      </mat-panel-description>
+      <button mat-raised-button color="warn" (click)="delete(i)">Delete Me</button>
+    </mat-expansion-panel-header>
+
+    <!-- <div *ngIf="tasksList$ | async as tasksList; else displaySpinner"> -->
+      <mat-checkbox [checked]="task.done" (change)="changeCheck(i)">Done</mat-checkbox>
+      <p>This task must be done until: {{ task.dueDate }}</p>
+    <!-- </div>   -->
+  </mat-expansion-panel>
+  <ng-template #displaySpinner>
+    <mat-progress-bar  mode="buffer"></mat-progress-bar>
+  </ng-template>
+</div> 

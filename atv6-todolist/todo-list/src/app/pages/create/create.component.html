@@ -1,0 +1,36 @@
+<div class="layout background">
+  <p>Create Your Task</p>
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Task Name</mat-label>
+    <input matInput type="text" [(ngModel)]="task.name">
+    <button *ngIf="task.name" matSuffix mat-icon-button aria-label="Clear" (click)="task.name=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Task Description</mat-label>
+    <input matInput type="text" [(ngModel)]="task.description">
+    <button *ngIf="task.description" matSuffix mat-icon-button aria-label="Clear" (click)="task.description=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Task Due Date</mat-label>
+    <input matInput type="text" [(ngModel)]="task.dueDate">
+    <button *ngIf="task.dueDate" matSuffix mat-icon-button aria-label="Clear" (click)="task.dueDate=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <section>
+    <div>
+      <h3>newTask Done?</h3>
+    </div>
+    <div>
+      <mat-checkbox [checked]="task.done" [(ngModel)]="task.done">Done</mat-checkbox>
+    </div>
+  </section>
+  <button mat-raised-button (click)="add()">Create</button>
+</div>
